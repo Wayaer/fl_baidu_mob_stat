@@ -5,7 +5,7 @@ import 'package:flutter/services.dart';
 
 const MethodChannel _channel = MethodChannel('fl_baidu_mob_stat');
 
-///设置 apiKey
+/// 设置 apiKey
 Future<bool> setApiKeyWithMobStat(
     {required String androidKey, required String iosKey}) async {
   bool? state = false;
