@@ -1,0 +1,21 @@
+name: fl_baidu_mob_stat
+description: baidu mobstat plugin for flutter, only Android and IOS are supported
+version: 0.0.1
+repository: https://github.com/Wayaer/fl_baidu_mob_stat.git
+
+environment:
+  sdk: '>=2.12.1 <3.0.0'
+  flutter: '>=2.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.fl.baidu.mob.stat
+        pluginClass: FLBaiduMobStatPlugin
+      ios:
+        pluginClass: FLBaiduMobStatPlugin

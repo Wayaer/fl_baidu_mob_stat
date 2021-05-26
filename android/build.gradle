@@ -1,0 +1,50 @@
+group 'fl.baidu.mob.stat'
+version '1.0'
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.2.1'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.10"
+    }
+}
+
+rootProject.allprojects {
+    repositories {
+        mavenCentral()
+        google()
+    }
+}
+
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+android {
+    compileSdkVersion 30
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+    defaultConfig {
+        minSdkVersion 16
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+    packagingOptions {
+        merge 'AndroidManifest.xml'
+        merge 'R.txt'
+        merge 'classes.jar'
+        merge 'proguard.txt'
+    }
+}
+
+dependencies {
+    implementation 'com.baidu.mobstat:mtj-sdk:latest.integration'
+    implementation "androidx.core:core-ktx:1.5.0"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}
+repositories {
+    mavenCentral()
+}
