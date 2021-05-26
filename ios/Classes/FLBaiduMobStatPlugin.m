@@ -13,7 +13,7 @@
 - (void)handleMethodCall:(FlutterMethodCall *)call result:(FlutterResult)result {
     if ([call.method isEqualToString:@"setApiKey"]) {
         [[BaiduMobStat defaultStat] startWithAppId:call.arguments];
-        [BaiduMobStat defaultStat].platformType = 0;
+        [BaiduMobStat defaultStat].platformType = 2;
         result(@(YES));
     } else if ([call.method isEqualToString:@"setAppVersionName"]) {
         [[BaiduMobStat defaultStat] setShortAppVersion:call.arguments];
@@ -22,7 +22,7 @@
         [[BaiduMobStat defaultStat] setChannelId:call.arguments];
         result(@(YES));
     } else if ([call.method isEqualToString:@"setDebug"]) {
-        [BaiduMobStat defaultStat].enableDebugOn = call.arguments;
+        [BaiduMobStat defaultStat].enableDebugOn = [call.arguments boolValue];
         result(@(YES));
     } else if ([call.method isEqualToString:@"logEvent"]) {
         NSString *eventId = call.arguments[@"eventId"];
