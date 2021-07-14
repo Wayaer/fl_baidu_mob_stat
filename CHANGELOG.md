@@ -1,3 +1,6 @@
+## [0.0.3]
+ * upgrade Android [baidu.mobstat] SDK version
+ * add platform restrictions
 ## [0.0.2]
  * fix bug
 ## [0.0.1]

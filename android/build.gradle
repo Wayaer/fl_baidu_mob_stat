@@ -8,8 +8,8 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.2.1'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.10"
+        classpath 'com.android.tools.build:gradle:4.2.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.21"
     }
 }
 
@@ -41,9 +41,8 @@ android {
 }
 
 dependencies {
-    implementation 'com.baidu.mobstat:mtj-sdk:latest.integration'
-    implementation "androidx.core:core-ktx:1.5.0"
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'com.baidu.mobstat:mtj-sdk:4.0.5.9'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.5.21"
 }
 repositories {
     mavenCentral()
