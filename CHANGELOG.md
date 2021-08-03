@@ -1,3 +1,5 @@
+## [1.1.0]
+ * Please run flutter clean after upgrading
 ## [1.0.0]
  * add Singleton Pattern
 ## [0.0.3]

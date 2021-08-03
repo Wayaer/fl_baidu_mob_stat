@@ -1,4 +1,4 @@
-package com.fl.baidu.mob.stat
+package fl.baidu.mob.stat
 
 import android.content.Context
 import com.baidu.mobstat.StatService
@@ -7,7 +7,7 @@ import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 
 
-class FLBaiduMobStatPlugin : FlutterPlugin, MethodChannel.MethodCallHandler {
+class FlBaiduMobStatPlugin : FlutterPlugin, MethodChannel.MethodCallHandler {
     private var mContext: Context? = null
     private var channel: MethodChannel? = null
 

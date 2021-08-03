@@ -3,17 +3,17 @@ import 'dart:async';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
-class FLBaiduMobStat {
-  factory FLBaiduMobStat() => _getInstance();
+class FlBaiduMobStat {
+  factory FlBaiduMobStat() => _getInstance();
 
-  FLBaiduMobStat._internal();
+  FlBaiduMobStat._internal();
 
-  static FLBaiduMobStat get instance => _getInstance();
+  static FlBaiduMobStat get instance => _getInstance();
 
-  static FLBaiduMobStat? _instance;
+  static FlBaiduMobStat? _instance;
 
-  static FLBaiduMobStat _getInstance() {
-    _instance ??= FLBaiduMobStat._internal();
+  static FlBaiduMobStat _getInstance() {
+    _instance ??= FlBaiduMobStat._internal();
     return _instance!;
   }
 
