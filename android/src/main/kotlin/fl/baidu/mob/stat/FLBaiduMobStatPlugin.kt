@@ -7,7 +7,7 @@ import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 
 
-class FlBaiduMobStatPlugin : FlutterPlugin, MethodChannel.MethodCallHandler {
+class FLBaiduMobStatPlugin : FlutterPlugin, MethodChannel.MethodCallHandler {
     private var mContext: Context? = null
     private var channel: MethodChannel? = null
 

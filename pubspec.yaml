@@ -16,6 +16,6 @@ flutter:
     platforms:
       android:
         package: fl.baidu.mob.stat
-        pluginClass: FlBaiduMobStatPlugin
+        pluginClass: FLBaiduMobStatPlugin
       ios:
-        pluginClass: FlBaiduMobStatPlugin
+        pluginClass: FLBaiduMobStatPlugin

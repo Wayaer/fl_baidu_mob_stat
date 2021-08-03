@@ -1,12 +1,12 @@
-#import "FlBaiduMobStatPlugin.h"
+#import "FLBaiduMobStatPlugin.h"
 #import "BaiduMobStat.h"
 
-@implementation FlBaiduMobStatPlugin
+@implementation FLBaiduMobStatPlugin
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar> *)registrar {
     FlutterMethodChannel *channel = [FlutterMethodChannel
                                      methodChannelWithName:@"fl_baidu_mob_stat"
                                      binaryMessenger:[registrar messenger]];
-    FlBaiduMobStatPlugin *instance = [[FlBaiduMobStatPlugin alloc] init];
+    FLBaiduMobStatPlugin *instance = [[FLBaiduMobStatPlugin alloc] init];
     [registrar addMethodCallDelegate:instance channel:channel];
 }
 
