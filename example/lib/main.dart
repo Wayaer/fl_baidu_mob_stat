@@ -63,16 +63,16 @@ class _MyAppState extends State<_MyApp> {
           Container(
               height: 100, child: Text(text), alignment: Alignment.center),
           ElevatedButton(
-              child: const Text('mobStatLogEvent'),
+              child: const Text('logEvent'),
               onPressed: () async {
                 final bool state = await FLBaiduMobStat.instance.logEvent(
                     eventId: 'Event1',
                     attributes: <String, String>{'k1': 'v1', 'k2': 'v2'});
-                text = 'mobStatLogEvent: $state';
+                text = 'logEvent: $state';
                 setState(() {});
               }),
           ElevatedButton(
-              child: const Text('mobStatLogDurationEvent'),
+              child: const Text('logDurationEvent'),
               onPressed: () async {
                 final bool state = await FLBaiduMobStat.instance
                     .logDurationEvent(
@@ -80,41 +80,40 @@ class _MyAppState extends State<_MyApp> {
                         duration: 3000,
                         label: 'event',
                         attributes: <String, String>{'k1': 'v1'});
-                text = 'mobStatLogDurationEvent: $state';
+                text = 'logDurationEvent: $state';
                 setState(() {});
               }),
           ElevatedButton(
-              child: Text(_eventStartEndButtonSelected
-                  ? 'mobStatEventEnd'
-                  : 'mobStatEventStart'),
+              child: Text(
+                  _eventStartEndButtonSelected ? 'eventEnd' : 'eventStart'),
               onPressed: () async {
                 _eventStartEndButtonSelected = !_eventStartEndButtonSelected;
                 if (_eventStartEndButtonSelected) {
                   final bool state = await FLBaiduMobStat.instance
                       .eventStart(eventId: 'Event3');
-                  text = 'mobStatEventStart: $state';
+                  text = 'eventStart: $state';
                 } else {
                   final bool state = await FLBaiduMobStat.instance.eventEnd(
                       eventId: 'Event3',
                       attributes: <String, String>{'k1': 'v1'});
-                  text = 'mobStatEventEnd: $state';
+                  text = 'eventEnd: $state';
                 }
                 setState(() {});
               }),
           ElevatedButton(
-              child: const Text('Open new page'),
+              child: const Text('Open page'),
               onPressed: () async {
                 final bool state =
                     await FLBaiduMobStat.instance.pageStart('AnotherPage');
-                text = 'mobStatPageStart: $state';
+                text = 'pageStart: $state';
                 setState(() {});
               }),
           ElevatedButton(
-              child: const Text('Close new page'),
+              child: const Text('Close page'),
               onPressed: () async {
                 final bool state =
                     await FLBaiduMobStat.instance.pageEnd('AnotherPage');
-                text = 'mobStatPageEnd: $state';
+                text = 'pageEnd: $state';
                 setState(() {});
               }),
           ElevatedButton(
