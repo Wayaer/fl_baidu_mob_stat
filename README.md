@@ -11,7 +11,7 @@
 - 注册key
 ```dart
 Future<void> fun() async {
-  final bool key = await FlBaiduMobStat.instance.setApiKey(
+  final bool key = await FlBaiduMobStat().setApiKey(
       androidKey: 'androidKey', iosKey: 'iosKey');
      print('初始化是否成功：$key');
 }
@@ -21,7 +21,7 @@ Future<void> fun() async {
 - 设置channel (可选)
 ```dart
 Future<void> fun() async {
-   final bool channel = await FlBaiduMobStat.instance.setAppChannel(channelName);
+   final bool channel = await FlBaiduMobStat().setAppChannel(channelName);
    print('设置channel：$channelName = $channel');
 }
 
@@ -30,7 +30,7 @@ Future<void> fun() async {
 - 设置version (可选)
 ```dart
 Future<void> fun() async {
-    final bool version = await FlBaiduMobStat.instance.setAppVersionName('1.0.0');
+    final bool version = await FlBaiduMobStat().setAppVersionName('1.0.0');
     print('设置version name：$version');
 }
 
@@ -38,7 +38,7 @@ Future<void> fun() async {
 - 是否开启debug模式 (可选)
 ```dart
 Future<void> fun() async {
-     final bool debug = await FlBaiduMobStat.instance.setDebug(true);
+     final bool debug = await FlBaiduMobStat().setDebug(true);
      print('设置是否开启debug模式：$debug');
 }
 
@@ -47,21 +47,21 @@ Future<void> fun() async {
 - 获取SDK生成的设备的测试ID
 ```dart
 Future<void> fun()async{
-   final String? id = await FlBaiduMobStat.instance.getTestDeviceId();
+   final String? id = await FlBaiduMobStat().getTestDeviceId();
 }
 ```
 
 - 获取SDK生成的设备的cuId  （android 上获取为空字符串）
 ```dart
 Future<void> fun()async{
-   final String? id = await  FlBaiduMobStat.instance.getDeviceCuId();
+   final String? id = await  FlBaiduMobStat().getDeviceCuId();
 }
 ```
 
 - 记录一次事件的点击。
 ```dart
 Future<void> fun()async{
-   final bool state = await FlBaiduMobStat.instance.logEvent(
+   final bool state = await FlBaiduMobStat().logEvent(
                        eventId: 'Event1',
                        attributes: <String, String>{'k1': 'v1', 'k2': 'v2'});
 }
@@ -70,7 +70,7 @@ Future<void> fun()async{
 - 记录一次事件的时长。
 ```dart
 Future<void> fun()async{
-   final bool state = await FlBaiduMobStat.instance.logDurationEvent(
+   final bool state = await FlBaiduMobStat().logDurationEvent(
                      eventId: 'Event2',
                      duration: 3000,
                      label: 'event',
@@ -81,14 +81,14 @@ Future<void> fun()async{
 - 记录一次事件的开始。
 ```dart
 Future<void> fun()async{
-   final bool state = await FlBaiduMobStat.instance.eventStart(eventId: 'Event3');
+   final bool state = await FlBaiduMobStat().eventStart(eventId: 'Event3');
 }
 ```
 
 - 记录一次事件的结束。
 ```dart
 Future<void> fun()async{
-   final bool state = await FlBaiduMobStat.instance.eventEnd(
+   final bool state = await FlBaiduMobStat().eventEnd(
                        eventId: 'Event3',
                        attributes: <String, String>{'k1': 'v1'});
 }
@@ -97,13 +97,13 @@ Future<void> fun()async{
 - 记录某个页面访问的开始。
 ```dart
 Future<void> fun()async{
-   final bool state = await FlBaiduMobStat.instance.pageStart('AnotherPage');
+   final bool state = await FlBaiduMobStat().pageStart('AnotherPage');
 }
 ```
 
 - 记录某个页面访问的结束。
 ```dart
 Future<void> fun()async{
-   final bool state = await FlBaiduMobStat.instance.pageEnd('AnotherPage');
+   final bool state = await FlBaiduMobStat().pageEnd('AnotherPage');
 }
 ```

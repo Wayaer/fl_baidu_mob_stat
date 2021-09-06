@@ -2,14 +2,15 @@ group 'fl.baidu.mob.stat'
 version '1.0'
 
 buildscript {
+    ext.kotlin_version = '1.5.30'
     repositories {
         google()
         mavenCentral()
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.0.0'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.21"
+        classpath 'com.android.tools.build:gradle:7.0.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
 
@@ -41,8 +42,8 @@ android {
 }
 
 dependencies {
-    implementation 'com.baidu.mobstat:mtj-sdk:4.0.5.9'
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.5.21"
+    implementation "com.baidu.mobstat:mtj-sdk:latest.integration"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 repositories {
     mavenCentral()

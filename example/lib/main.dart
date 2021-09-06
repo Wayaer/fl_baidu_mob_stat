@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
-  final bool key = await FlBaiduMobStat.instance
+  final bool key = await FlBaiduMobStat()
       .setApiKey(androidKey: 'androidKey', iosKey: 'iosKey');
   print('初始化是否成功：$key');
 
@@ -15,13 +15,13 @@ Future<void> main() async {
   if (Platform.isAndroid) channelName += '- Android';
   if (Platform.isIOS) channelName += '- IOS';
 
-  final bool channel = await FlBaiduMobStat.instance.setAppChannel(channelName);
+  final bool channel = await FlBaiduMobStat().setAppChannel(channelName);
   print('设置channel：$channelName = $channel');
 
-  final bool version = await FlBaiduMobStat.instance.setAppVersionName('1.0.0');
+  final bool version = await FlBaiduMobStat().setAppVersionName('1.0.0');
   print('设置version name：$version');
 
-  final bool debug = await FlBaiduMobStat.instance.setDebug(true);
+  final bool debug = await FlBaiduMobStat().setDebug(true);
   print('设置是否开启debug模式：$debug');
 
   runApp(MaterialApp(
@@ -41,14 +41,14 @@ class _MyAppState extends State<_MyApp> {
   String text = '';
 
   Future<void> _getDeviceCuId() async {
-    final String? cuId = await FlBaiduMobStat.instance.getDeviceCuId();
+    final String? cuId = await FlBaiduMobStat().getDeviceCuId();
     if (cuId == null) return;
     text = 'CuId:\n' + cuId;
     setState(() {});
   }
 
   Future<void> _getTestDeviceId() async {
-    final String? id = await FlBaiduMobStat.instance.getTestDeviceId();
+    final String? id = await FlBaiduMobStat().getTestDeviceId();
     if (id == null) return;
     text = 'TestId\n' + id;
     setState(() {});
@@ -65,7 +65,7 @@ class _MyAppState extends State<_MyApp> {
           ElevatedButton(
               child: const Text('logEvent'),
               onPressed: () async {
-                final bool state = await FlBaiduMobStat.instance.logEvent(
+                final bool state = await FlBaiduMobStat().logEvent(
                     eventId: 'Event1',
                     attributes: <String, String>{'k1': 'v1', 'k2': 'v2'});
                 text = 'logEvent: $state';
@@ -74,12 +74,11 @@ class _MyAppState extends State<_MyApp> {
           ElevatedButton(
               child: const Text('logDurationEvent'),
               onPressed: () async {
-                final bool state = await FlBaiduMobStat.instance
-                    .logDurationEvent(
-                        eventId: 'Event2',
-                        duration: 3000,
-                        label: 'event',
-                        attributes: <String, String>{'k1': 'v1'});
+                final bool state = await FlBaiduMobStat().logDurationEvent(
+                    eventId: 'Event2',
+                    duration: 3000,
+                    label: 'event',
+                    attributes: <String, String>{'k1': 'v1'});
                 text = 'logDurationEvent: $state';
                 setState(() {});
               }),
@@ -89,11 +88,11 @@ class _MyAppState extends State<_MyApp> {
               onPressed: () async {
                 _eventStartEndButtonSelected = !_eventStartEndButtonSelected;
                 if (_eventStartEndButtonSelected) {
-                  final bool state = await FlBaiduMobStat.instance
-                      .eventStart(eventId: 'Event3');
+                  final bool state =
+                      await FlBaiduMobStat().eventStart(eventId: 'Event3');
                   text = 'eventStart: $state';
                 } else {
-                  final bool state = await FlBaiduMobStat.instance.eventEnd(
+                  final bool state = await FlBaiduMobStat().eventEnd(
                       eventId: 'Event3',
                       attributes: <String, String>{'k1': 'v1'});
                   text = 'eventEnd: $state';
@@ -104,7 +103,7 @@ class _MyAppState extends State<_MyApp> {
               child: const Text('open page'),
               onPressed: () async {
                 final bool state =
-                    await FlBaiduMobStat.instance.pageStart('AnotherPage');
+                    await FlBaiduMobStat().pageStart('AnotherPage');
                 text = 'pageStart: $state';
                 setState(() {});
               }),
@@ -112,7 +111,7 @@ class _MyAppState extends State<_MyApp> {
               child: const Text('close page'),
               onPressed: () async {
                 final bool state =
-                    await FlBaiduMobStat.instance.pageEnd('AnotherPage');
+                    await FlBaiduMobStat().pageEnd('AnotherPage');
                 text = 'pageEnd: $state';
                 setState(() {});
               }),

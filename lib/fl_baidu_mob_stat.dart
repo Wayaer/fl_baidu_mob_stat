@@ -4,18 +4,14 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 class FlBaiduMobStat {
-  factory FlBaiduMobStat() => _getInstance();
-
-  FlBaiduMobStat._internal();
-
-  static FlBaiduMobStat get instance => _getInstance();
-
-  static FlBaiduMobStat? _instance;
-
-  static FlBaiduMobStat _getInstance() {
-    _instance ??= FlBaiduMobStat._internal();
-    return _instance!;
+  factory FlBaiduMobStat() {
+    _singleton ??= FlBaiduMobStat._();
+    return _singleton!;
   }
+
+  FlBaiduMobStat._();
+
+  static FlBaiduMobStat? _singleton;
 
   final MethodChannel _channel = const MethodChannel('fl_baidu_mob_stat');
 
