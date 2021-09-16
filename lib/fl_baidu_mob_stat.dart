@@ -4,10 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
 class FlBaiduMobStat {
-  factory FlBaiduMobStat() {
-    _singleton ??= FlBaiduMobStat._();
-    return _singleton!;
-  }
+  factory FlBaiduMobStat() => _singleton ??= FlBaiduMobStat._();
 
   FlBaiduMobStat._();
 
