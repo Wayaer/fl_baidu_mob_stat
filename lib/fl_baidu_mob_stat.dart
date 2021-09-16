@@ -23,8 +23,9 @@ class FlBaiduMobStat {
     String? key;
     if (_isAndroid) key = androidKey;
     if (_isIOS) key = iosKey;
-    if (key != null)
+    if (key != null) {
       state = await _channel.invokeMethod<bool?>('setApiKey', key);
+    }
     return state ?? false;
   }
 
@@ -151,7 +152,7 @@ class FlBaiduMobStat {
 
   bool get _supportPlatform {
     if (!kIsWeb && (_isAndroid || _isIOS)) return true;
-    print('Not support platform for $defaultTargetPlatform');
+    debugPrint('Not support platform for $defaultTargetPlatform');
     return false;
   }
 

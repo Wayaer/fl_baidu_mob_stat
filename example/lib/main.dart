@@ -9,20 +9,20 @@ Future<void> main() async {
 
   final bool key = await FlBaiduMobStat()
       .setApiKey(androidKey: 'androidKey', iosKey: 'iosKey');
-  print('初始化是否成功：$key');
+  debugPrint('初始化是否成功：$key');
 
   String channelName = 'flutter';
   if (Platform.isAndroid) channelName += '- Android';
   if (Platform.isIOS) channelName += '- IOS';
 
   final bool channel = await FlBaiduMobStat().setAppChannel(channelName);
-  print('设置channel：$channelName = $channel');
+  debugPrint('设置channel：$channelName = $channel');
 
   final bool version = await FlBaiduMobStat().setAppVersionName('1.0.0');
-  print('设置version name：$version');
+  debugPrint('设置version name：$version');
 
   final bool debug = await FlBaiduMobStat().setDebug(true);
-  print('设置是否开启debug模式：$debug');
+  debugPrint('设置是否开启debug模式：$debug');
 
   runApp(MaterialApp(
     home: _MyApp(),
