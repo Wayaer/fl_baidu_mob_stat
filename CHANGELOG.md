@@ -1,17 +1,32 @@
+## 1.2.1
+
+* Update the Android gradle Version
+
 ## 1.2.0
- * remove instance , direct initialization
- * update gradle version
- * update kotlin version
+
+* Remove instance , direct initialization
+* Update gradle version
+* Update kotlin version
+
 ## 1.1.0
- * Please run flutter clean after upgrading
+
+* Please run flutter clean after upgrading
+
 ## 1.0.0
- * add Singleton Pattern
+
+* Add Singleton Pattern
+
 ## 0.0.3
- * upgrade Android baidu.mobstat SDK version
- * add platform restrictions
+
+* Upgrade Android baidu.mobstat SDK version
+* Add platform restrictions
+
 ## 0.0.2
- * fix bug
+
+* Fix bug
+
 ## 0.0.1
- * create plugin
- * add doc
- * add consumer-rules.pro on Android
+
+* Create plugin
+* Add doc
+* Add consumer-rules.pro on Android

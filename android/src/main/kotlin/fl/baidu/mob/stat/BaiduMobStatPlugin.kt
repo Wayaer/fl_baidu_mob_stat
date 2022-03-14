@@ -15,7 +15,6 @@ class BaiduMobStatPlugin : FlutterPlugin, MethodChannel.MethodCallHandler {
         channel = MethodChannel(flutterPluginBinding.binaryMessenger, "fl_baidu_mob_stat")
         channel!!.setMethodCallHandler(this)
         mContext = flutterPluginBinding.applicationContext
-
     }
 
     override fun onMethodCall(call: MethodCall, result: MethodChannel.Result) {
@@ -53,7 +52,13 @@ class BaiduMobStatPlugin : FlutterPlugin, MethodChannel.MethodCallHandler {
                 val duration = call.argument<Int>("duration")
                 val attributes = call.argument<MutableMap<String, String>?>("attributes")
                 if (duration != null) {
-                    StatService.onEventDuration(mContext, eventId, label, duration.toLong(), attributes)
+                    StatService.onEventDuration(
+                        mContext,
+                        eventId,
+                        label,
+                        duration.toLong(),
+                        attributes
+                    )
                 }
                 result.success(true)
             }
