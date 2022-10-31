@@ -1,4 +1,4 @@
-## 1.3.0+1
+## 1.3.1+1
 
 * Upgrade Flutter@3.0.0
 * Update the Android gradle Version
