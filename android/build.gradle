@@ -42,7 +42,7 @@ android {
 }
 
 dependencies {
-    implementation "com.baidu.mobstat:mtj-sdk:latest.integration"
+    implementation "com.baidu.mobstat:mtj-sdk:4.0.10.1"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
 repositories {

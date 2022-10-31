@@ -1,3 +1,7 @@
+## 1.3.1
+
+* Updated 4.0.10.1
+
 ## 1.3.0
 
 * Upgrade Flutter@3.0.0
