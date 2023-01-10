@@ -1,6 +1,6 @@
 # fl_baidu_mob_stat
 
-百度移动统计Flutter插件
+百度移动统计Flutter插件（手动埋点 原生sdk[官方](https://mtj.baidu.com/web/sdk/index)已停止更新）
 
 [运行 Example 查看 事例](https://github.com/Wayaer/fl_baidu_mob_stat/tree/main/example)
 
